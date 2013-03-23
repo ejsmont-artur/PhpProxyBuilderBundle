@@ -21,9 +21,13 @@ class DoctrineCacheTest extends \PHPUnit_Framework_TestCase {
 
     public function testLoadApcExtension() {
         $cache = new ArrayCache();
-
         $inst = new DoctrineCache($cache);
         $this->assertEquals(null, $inst->get("A1"));
+        $inst->set("A1", 123, 6000);
+        $this->assertEquals(123, $inst->get("A1"));
+        
+        // load same key over original instance
+        $this->assertEquals(123, $cache->fetch("A1"));
     }
 
 }
