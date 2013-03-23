@@ -1,5 +1,5 @@
 {
-    "name": "ejsmont-artur/PhpProxyBuilderBundle",
+    "name": "ejsmont-artur/php-proxy-builder-bundle",
     "type": "symfony-bundle",
     "description": "Symfony 2 PHP Proxy Builder integration for proxy objects and code reuse.",
     "keywords": ["proxy pattern", "proxy object", "proxy", "symfony2", "AOP"],
