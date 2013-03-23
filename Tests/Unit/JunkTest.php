@@ -6,7 +6,7 @@ use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Ejsmont\PhpProxyBuilderBundle\DependencyInjection\EjsmontPhpProxyBuilderExtension;
 use Ejsmont\PhpProxyBuilderBundle\EjsmontPhpProxyBuilderBundle;
 
-class DoctrineCacheAdapterTest extends \PHPUnit_Framework_TestCase {
+class JunkTest extends \PHPUnit_Framework_TestCase {
 
     /**
      * @var ContainerBuilder
