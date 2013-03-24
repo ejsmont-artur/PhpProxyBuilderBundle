@@ -25,7 +25,7 @@
         <delete dir="${basedir}/build" />
     </target>
 
-    <target name="init">
+    <target name="init" depends="clean">
         <mkdir dir="${basedir}/build" />
         <mkdir dir="${basedir}/build/logs" />
         <mkdir dir="${basedir}/build/cache" />
@@ -39,7 +39,7 @@
         <mkdir dir="${basedir}/vendor" />
     </target>
     
-    <target name="quick" depends="clean,init"/>
+    <target name="quick" depends="init"/>
 
     <!-- ========================================== COMPOSER ====================================================== -->
 
@@ -155,6 +155,15 @@
     <target name="ci"   depends="phpunitExtended,phpdoc,print-code-coverage"/>
 
     <!-- reload dependencies and run full CI build -->
-    <target name="full" depends="setup,phpunitExtended,phpdoc,package,print-code-coverage"/>
+    <target name="full" depends="setup,ci,package"/>
+    
+    <!-- cuctom target to generate graphs of ant scripts -->
+    <taskdef name="vizant" classname="net.sourceforge.vizant.Vizant" classpath="Resources/jars/vizant-0.1.2.jar"/>
+    <target name="ant-graph" depends="quick"> 
+        <vizant antfile="build.xml" outfile="build/build.dot"/>
+        <exec executable="dot">
+            <arg line="-Tpng build/build.dot -o build/build.png"/>
+        </exec>
+    </target>
     
 </project>
