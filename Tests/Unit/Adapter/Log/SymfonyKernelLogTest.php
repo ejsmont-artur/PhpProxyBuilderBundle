@@ -6,7 +6,7 @@ use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Ejsmont\PhpProxyBuilderBundle\Adapter\Cache\DoctrineCache;
 use Doctrine\Common\Cache\ArrayCache;
 
-class DoctrineCacheTest extends \PHPUnit_Framework_TestCase {
+class SymfonyKernelLogTest extends \PHPUnit_Framework_TestCase {
 
     /**
      * @var ContainerBuilder
@@ -25,7 +25,7 @@ class DoctrineCacheTest extends \PHPUnit_Framework_TestCase {
         $this->assertEquals(null, $inst->get("A1"));
         $inst->set("A1", 123, 6000);
         $this->assertEquals(123, $inst->get("A1"));
-
+        
         // load same key over original instance
         $this->assertEquals(123, $cache->fetch("A1"));
     }
