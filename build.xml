@@ -73,6 +73,7 @@
     </target>
     
     <target name="phpunitExtended" depends="quick">
+        <echo>Running tests with coverage</echo>
         <exec executable="phpunit" dir="${basedir}/Tests" failonerror="on">
             <arg line="--configuration phpunit-extended.xml" />
         </exec>

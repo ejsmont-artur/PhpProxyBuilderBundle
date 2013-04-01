@@ -16,12 +16,9 @@
     
     <filter>
         <whitelist>
-            <directory suffix=".php">../</directory>
-            <exclude>
-                <directory>../Test</directory>
-                <directory>../vendor</directory>
-                <directory>../build</directory>
-            </exclude>
+            <directory suffix=".php">../Adapter</directory>
+            <directory suffix=".php">../DependencyInjection</directory>
+            <file>../EjsmontPhpProxyBuilderBundle.php</file>
         </whitelist>
     </filter>
 
